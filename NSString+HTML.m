@@ -31,6 +31,32 @@
 @implementation NSString (HTML)
 
 // Method based on code obtained from:
+// http://stackoverflow.com/questions/277055/remove-html-tags-from-an-nsstring-on-the-iphone
+//
+
+- (NSString *)kv_stripHTMLCharacterEntities{
+
+  NSMutableString *outString;
+
+  if (self)
+  {
+    outString = [[NSMutableString alloc] initWithString:self];
+
+    if ([self length] > 0)
+    {
+      NSRange r;
+
+      while ((r = [outString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+      {
+        [outString deleteCharactersInRange:r];
+      }
+    }
+  }
+
+  return outString;
+}
+
+// Method based on code obtained from:
 // http://www.thinkmac.co.uk/blog/2005/05/removing-entities-from-html-in-cocoa.html
 //
 
