@@ -34,7 +34,7 @@
 // http://www.thinkmac.co.uk/blog/2005/05/removing-entities-from-html-in-cocoa.html
 //
 
-- (NSString *)kv_decodeHTMLCharacterEntities {
+- (NSString *)decodeHTMLCharacterEntities {
     if ([self rangeOfString:@"&"].location == NSNotFound) {
         return self;
     } else {
@@ -152,7 +152,7 @@
     }
 }
 
-- (NSString *)kv_encodeHTMLCharacterEntities {
+- (NSString *)encodeHTMLCharacterEntities {
     NSMutableString *encoded = [NSMutableString stringWithString:self];
 
     // @"&amp;"
