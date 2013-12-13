@@ -36,4 +36,4 @@ This code is distributed under the terms and conditions of this [license](LICENS
 
 ## Change-log
 
-A brief summary of each NSUserDefaults-AESEncryptor release can be found on the [wiki](https://github.com/NZN/NSString-HTML/wiki/Change-log).
+A brief summary of each NSString-HTML release can be found on the [wiki](https://github.com/NZN/NSString-HTML/wiki/Change-log).
