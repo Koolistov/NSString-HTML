@@ -3,6 +3,8 @@ NSString+HTML
 
 Decode and encode HTML character entities. Method based on code obtained from: http://www.thinkmac.co.uk/blog/2005/05/removing-entities-from-html-in-cocoa.html (blogpost no longer available)
 
+[![Build Status](https://api.travis-ci.org/NZN/NSString-HTML.png)](https://api.travis-ci.org/NZN/NSString-HTML.png)
+
 USAGE
 -----
 
