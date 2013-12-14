@@ -32,7 +32,7 @@ NSString *string = ...;
 
 ## License
 
-This code is distributed under the terms and conditions of this [license](LICENSE).
+This code is distributed under the terms and conditions of this [copyright license](LICENSE).
 
 ## Change-log
 
