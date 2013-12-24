@@ -1,7 +1,21 @@
 Pod::Spec.new do |s|
   s.name = 'NSString-HTML'
-  s.version = '0.0.4'
-  s.license      = {
+  s.version = '0.0.5'
+  s.summary = 'Decode and encode HTML character entities.'
+  s.homepage = 'https://github.com/NZN/NSString-HTML'
+  s.screenshot  = "http://s7.postimg.org/p06h2atzv/NSString_HTML.png"
+  
+  s.requires_arc = true
+  s.ios.deployment_target = '4.3.5'
+  s.osx.deployment_target = '10.6'
+  
+  s.authors = { 'Johan Kool' => 'http://www.koolistov.net/', 'Bruno Tortato Furtado' => 'bruno.furtado@gruponzn.com' }
+  
+  s.source_files = 'NSString-HTML/*.{h,m}'
+  s.source = { :git => 'https://github.com/NZN/NSString-HTML.git', :tag => '0.0.5' }  
+
+  s.license = 
+  {
     :type => 'Copyright',
     :text => <<-LICENSE
     Copyright 2009-2011 Koolistov Pte Ltd. All rights reserved.
@@ -13,15 +27,4 @@ Pod::Spec.new do |s|
   
     LICENSE
   }
-  s.summary = 'Decode and encode HTML character entities.'
-  s.homepage	 = 'https://github.com/NZN/NSString-HTML'
-  
-  s.requires_arc = true
-  s.ios.deployment_target = '4.3.5'
-  s.osx.deployment_target = '10.6'
-  
-  s.authors = { 'Johan Kool' => 'http://www.koolistov.net/', 'Bruno Tortato Furtado' => 'bruno.furtado@gruponzn.com' }
-  
-  s.source_files = '*.{h,m}'
-  s.source = { :git => 'https://github.com/NZN/NSString-HTML.git', :tag => '0.0.4' }  
 end

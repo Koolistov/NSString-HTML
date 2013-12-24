@@ -3,6 +3,10 @@ NSString+HTML
 
 Decode and encode HTML character entities.
 
+<p align="center">
+  <img src="http://s7.postimg.org/p06h2atzv/NSString_HTML.png" alt="NSString-Email" title="NSString-Email" width="246" height="369">
+</p>
+
 [![Build Status](https://api.travis-ci.org/NZN/NSString-HTML.png)](https://api.travis-ci.org/NZN/NSString-HTML.png)
 
 ## Adding NSString-Email to your project
