@@ -34,7 +34,7 @@
 // http://www.thinkmac.co.uk/blog/2005/05/removing-entities-from-html-in-cocoa.html
 //
 
-- (NSString *)kv_decodeHTMLCharacterEntities {
+- (NSString *)decodeHTMLCharacterEntities {
     if ([self rangeOfString:@"&"].location == NSNotFound) {
         return self;
     } else {
@@ -62,7 +62,7 @@
             NSRange range = [self rangeOfString:[codes objectAtIndex:i]];
             if (range.location != NSNotFound) {
                 [escaped replaceOccurrencesOfString:[codes objectAtIndex:i]
-                                         withString:[NSString stringWithFormat:@"%C", 160 + i]
+                                         withString:[NSString stringWithFormat:@"%C", (unichar)(160 + i)]
                                             options:NSLiteralSearch
                                               range:NSMakeRange(0, [escaped length])];
             }
@@ -74,7 +74,7 @@
         NSRange range = [self rangeOfString:@"&amp;"];
         if (range.location != NSNotFound) {
             [escaped replaceOccurrencesOfString:@"&amp;"
-                                     withString:[NSString stringWithFormat:@"%C", 38]
+                                     withString:[NSString stringWithFormat:@"%C", (unichar)38]
                                         options:NSLiteralSearch
                                           range:NSMakeRange(0, [escaped length])];
         }
@@ -83,7 +83,7 @@
         range = [self rangeOfString:@"&lt;"];
         if (range.location != NSNotFound) {
             [escaped replaceOccurrencesOfString:@"&lt;"
-                                     withString:[NSString stringWithFormat:@"%C", 60]
+                                     withString:[NSString stringWithFormat:@"%C", (unichar)60]
                                         options:NSLiteralSearch
                                           range:NSMakeRange(0, [escaped length])];
         }
@@ -92,7 +92,7 @@
         range = [self rangeOfString:@"&gt;"];
         if (range.location != NSNotFound) {
             [escaped replaceOccurrencesOfString:@"&gt;"
-                                     withString:[NSString stringWithFormat:@"%C", 62]
+                                     withString:[NSString stringWithFormat:@"%C", (unichar)62]
                                         options:NSLiteralSearch
                                           range:NSMakeRange(0, [escaped length])];
         }
@@ -101,7 +101,7 @@
         range = [self rangeOfString:@"&apos;"];
         if (range.location != NSNotFound) {
             [escaped replaceOccurrencesOfString:@"&apos;"
-                                     withString:[NSString stringWithFormat:@"%C", 39]
+                                     withString:[NSString stringWithFormat:@"%C", (unichar)39]
                                         options:NSLiteralSearch
                                           range:NSMakeRange(0, [escaped length])];
         }
@@ -110,7 +110,7 @@
         range = [self rangeOfString:@"&quot;"];
         if (range.location != NSNotFound) {
             [escaped replaceOccurrencesOfString:@"&quot;"
-                                     withString:[NSString stringWithFormat:@"%C", 34]
+                                     withString:[NSString stringWithFormat:@"%C", (unichar)34]
                                         options:NSLiteralSearch
                                           range:NSMakeRange(0, [escaped length])];
         }
@@ -140,9 +140,9 @@
                     unsigned tempInt = 0;
                     NSScanner *scanner = [NSScanner scannerWithString:[value substringFromIndex:1]];
                     [scanner scanHexInt:&tempInt];
-                    [escaped insertString:[NSString stringWithFormat:@"%C", tempInt] atIndex:entityRange.location];
+                    [escaped insertString:[NSString stringWithFormat:@"%C", (unichar)tempInt] atIndex:entityRange.location];
                 } else {
-                    [escaped insertString:[NSString stringWithFormat:@"%C", [value intValue]] atIndex:entityRange.location];
+                    [escaped insertString:[NSString stringWithFormat:@"%C", (unichar)[value intValue]] atIndex:entityRange.location];
                 } i = start.location;
             } else { i++; }
             searchRange = NSMakeRange(i, [escaped length] - i);
@@ -152,7 +152,7 @@
     }
 }
 
-- (NSString *)kv_encodeHTMLCharacterEntities {
+- (NSString *)encodeHTMLCharacterEntities {
     NSMutableString *encoded = [NSMutableString stringWithString:self];
 
     // @"&amp;"
