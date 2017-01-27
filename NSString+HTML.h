@@ -30,6 +30,7 @@
 
 @interface NSString (HTML)
 
+- (NSString *)kv_stripHTMLCharacterEntities;
 - (NSString *)kv_decodeHTMLCharacterEntities;
 - (NSString *)kv_encodeHTMLCharacterEntities;
 

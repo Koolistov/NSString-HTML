@@ -2,6 +2,7 @@ NSString+HTML
 =============
 
 Decode and encode HTML character entities. Method based on code obtained from: http://www.thinkmac.co.uk/blog/2005/05/removing-entities-from-html-in-cocoa.html (blogpost no longer available)
+Also you can strip HTML tags out a NSString using a new function ( obtained from: http://stackoverflow.com/questions/277055/remove-html-tags-from-an-nsstring-on-the-iphone )
 
 USAGE
 -----
@@ -10,6 +11,7 @@ There are just two methods, which should be very self explanatory:
 
     - (NSString *)kv_decodeHTMLCharacterEntities;
     - (NSString *)kv_encodeHTMLCharacterEntities;
+    - (NSString *)kv_stripHTMLCharacterEntities;
 
 
 LICENSE
